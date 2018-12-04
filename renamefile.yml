@@ -1,0 +1,5 @@
+- hosts: everyone
+  user: root
+  tasks:
+    - name: rename file
+      command: mv /etc/yum.repos.d/hp-drivers.repo /etc/yum.repos.d/hp-drivers.repo.bak
