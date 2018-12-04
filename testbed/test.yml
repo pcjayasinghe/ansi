@@ -1,0 +1,12 @@
+- hosts: controller
+  tasks:
+   - name: test
+     copy:
+     # content: "{test}
+     #         \n{test2}"
+     # dest: /tmp/test
+      content: "<html>
+                   \n <header><title>Welcome to Server 1</title></header>
+                   \n <body>Hello from Server 1!</body>
+                   \n </html>"
+      dest: /tmp/index.html

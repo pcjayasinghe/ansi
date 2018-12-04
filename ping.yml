@@ -1,0 +1,5 @@
+- hosts: compute
+  user: root
+  tasks:
+    - name: check icmp connection
+      ping:

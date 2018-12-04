@@ -1,0 +1,7 @@
+- hosts: everyone
+  user: root
+  tasks:
+   - name: add repository
+     copy:
+       src: /etc/yum.repos.d/hp-drivers.repo     
+       dest: /etc/yum.repos.d/hp-drivers.repo

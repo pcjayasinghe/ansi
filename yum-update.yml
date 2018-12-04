@@ -1,0 +1,11 @@
+- hosts: controller
+  user: root
+  tasks:
+   - name: yumupdate on controller node
+     become: true
+     yum: 
+      name: all
+      state: latest
+#     yum:
+#      upgrade: yes     
+#      update_cache: yes
