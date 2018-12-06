@@ -1,0 +1,6 @@
+- hosts: test
+  tasks:
+   - replace:
+       path: /etc/rsyslog.conf
+       regexp: '*. *  @172.16.185.53:514'
+       replace: '#' 

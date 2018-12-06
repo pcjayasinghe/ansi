@@ -1,0 +1,27 @@
+- name: Edit configurations
+  hosts: servers
+  tasks:
+    - name: Copy sample file
+      copy: src=/home/chaminda/Documents/test.conf dest=/etc/test.conf
+
+    - name: Make Configure
+      ini_file: dest=/etc/test.conf section=DEFAULT option=port value=8090 backup=yes
+      tags: configuration
+
+    - template:
+        src: /etc/ansible/testPlay/mytemp.conf
+        dest: /etc/test.conf
+        owner: root
+        group: root
+        mode: '0600'
+        backup: yes
+
+    - lineinfile:
+        path: /etc/test.conf
+        regexp: '^year ='
+        line: 'year = 2023'
+
+    - replace:
+        path: /etc/test.conf
+        regexp: 'admin'
+        replace: 'user'

@@ -1,0 +1,17 @@
+---
+- name : Install for all servers
+  hosts: servers
+  become: true
+  tasks:
+    - name: Extract to /tmp/otp_src_R16B
+      unarchive: 
+        src: /home/chaminda/Downloads/otp_src_R16B.tar.gz
+        dest: /tmp
+
+    - name: Configure and install
+      command: "{{ item }} chdir=/tmp/otp_src_R16B"
+      with_items:
+        - ./configure
+        - make
+        - make install
+        - make clean
