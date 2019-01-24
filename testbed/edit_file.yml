@@ -1,0 +1,10 @@
+- hosts: erlangNodes
+  tasks:
+    - lineinfile:
+        path: /opt/test.conf
+        regexp: '^ip'
+        line: 'ip = 10.0.0.1'
+    - lineinfile:
+        path: /opt/test.conf
+        regexp: '^name'
+        line: 'name = demo-01'

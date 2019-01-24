@@ -1,0 +1,6 @@
+- hosts: erlangNodes
+  tasks:
+   - name: copy test.conf file 
+     copy: 
+       src: /opt/test.conf 
+       dest: /opt/
