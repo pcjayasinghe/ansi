@@ -1,0 +1,5 @@
+---
+- import_tasks: install_pkg.yml
+- import_tasks: user_group_add.yml
+- import_tasks: install_erlang.yml
+- import_tasks: edit_erl_profile_path.yml

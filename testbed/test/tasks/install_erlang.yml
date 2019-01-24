@@ -1,0 +1,10 @@
+- name: Extract erlang  to /opt/otp_src_R16B
+  unarchive: 
+    src: otp_src_R16B01.tar.gz
+    dest: /opt/
+- name: Configure and install
+  command: "{{ item }} chdir=/opt/otp_src_R16B01"
+  with_items:
+    - ./configure --prefix=/home/otpuser --enable-smp-support --enable-threads --enable-sctp --enable-ssl --enable-odbc
+    - make
+    - make install
