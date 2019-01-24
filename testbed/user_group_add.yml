@@ -1,0 +1,10 @@
+- hosts: erlangNodes
+  tasks:
+   - name: Add group "otp"
+     group:
+       name: otp
+       state: present
+   - name: Add the user 'otpuser' to  'otp' group
+     user:
+       name: otpuser
+       group: otp
