@@ -1,0 +1,13 @@
+- hosts: erlangNodes
+  tasks:
+    - lineinfile:
+        path: /root/.bash_profile
+        line: 'ERL_TOP=/home/otpuser/lib/erlang'  
+    - lineinfile: 
+        path: /root/.bash_profile
+        regexp: '^PATH=$PATH:$HOME/bin'
+        line: 'PATH=$PATH:$HOME/bin:/usr/sbin:/usr/bin:/sbin:/home/otpuser/bin'
+    - lineinfile:
+        path: /root/.bash_profile
+        regexp: '^export PATH'
+        line: 'export PATH ERL_TOP'
