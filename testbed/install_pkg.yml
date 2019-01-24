@@ -1,0 +1,21 @@
+- hosts: erlangNodes
+  tasks:
+    - name: Install a list of packages
+      yum:
+        name:
+          - gcc 
+          - glibc-devel 
+          - make 
+          - ncurses-devel 
+          - openssl-devel 
+          - autoconf
+          - unixODBC 
+          - unixODBC-devel 
+          - libtool-ltdl 
+          - libtool-ltdl-devel                      
+          - gmp-devel 
+          - mpfr-devel                      
+          - mod_ssl
+          - lksctp-tools
+          - lksctp-tools-devel       
+        state: present
